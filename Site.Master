@@ -47,8 +47,14 @@
 				<div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-						<li class="nav-item"><a class="nav-link" runat="server" href="~/Menu">Menu</a></li>
 						<li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/Menu">Menu</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/Cart">Cart</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/OrderHistory">Order History</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/NewProduct">Add New Product</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/Login">Login</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/SignUp">Sign Up</a></li>
+
 					</ul>
 				</div>
 			</div>

@@ -3,30 +3,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 	<h2>Our Signature Menu</h2>
 	<div class="row">
-		<div class="column">
-			<h3>Pepperoni Pizza</h3>
-			<asp:Image runat="server" ImageUrl="https://e7.pngegg.com/pngimages/935/770/png-clipart-pizza-pizza.png" Height="100" Width="100" />
-			<p>Our signature pepperoni pizza is made with the finest ingredients and cooked to perfection.</p>
-			<p>Price: $10.99</p>
-			<asp:Button ID="Button1" runat="server" Text="Add to Cart" OnClick="Button1_Click" />
+		<asp:Repeater ID="pizzaRepeater" runat="server">
+			<ItemTemplate>
+				<div class="column">
+					<h2><%# Eval("name") %></h2>
+					<asp:Image runat="server" ImageUrl='<%# Eval("imageURL") %>' Height="150" Width="150" />
+					<p>
+						<%# Eval("description") %>
+					</p>
+					<p>
+						Price: R<%# Eval("price") %>
+					</p>
+					<asp:Button runat="server" Text="Add to Cart" ID="btnAddToCart" OnCommand="btnAddToCart_Command" OnClick="btnAddToCart_Click" CommandArgument='<%# Eval("pizzaID") %>' />
+				</div>
+			</ItemTemplate>
+		</asp:Repeater>
 
-
-		</div>
-		<div class="column">
-			<h3>Vegetarian Pizza</h3>
-			<asp:Image runat="server" ImageUrl="https://e7.pngegg.com/pngimages/935/770/png-clipart-pizza-pizza.png" Height="100" Width="100" />
-			<p>Our vegetarian pizza is made with the freshest vegetables and cooked to perfection.</p>
-			<p>Price: $12.99</p>
-			<asp:Button ID="Button2" runat="server" Text="Add to Cart" OnClick="Button2_Click" />
-		</div>
-		<div class="column">
-			<h3>Meat Lovers Pizza</h3>
-			<asp:Image runat="server" ImageUrl="https://e7.pngegg.com/pngimages/935/770/png-clipart-pizza-pizza.png" Height="100" Width="100" />
-			<p>Our meat lovers pizza is made with the finest meats and cooked to perfection.</p>
-			<p>Price: $14.99</p>
-			<asp:Button ID="Button3" runat="server" Text="Add to Cart" OnClick="Button3_Click" />
-		</div>
 	</div>
+
 	<style>
 		.column {
 			float: left;
